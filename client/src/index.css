@@ -51,6 +51,11 @@ body {
   font-size: 28px;
 }
 
+.onboard-text {
+  color:rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
 .question-text {
   margin-bottom: 12px;
 }
