@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { QuizScreen } from "./screens/QuizScreen";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -23,6 +23,21 @@ export default function App() {
   const [user] = useAuthState(auth);
   var name;
   // console.log(user);
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        user.getIdToken().then((idToken) => {
+          console.log(idToken);
+          localStorage.setItem("Token", idToken);
+        });
+        console.info("User detected.");
+      } else {
+        console.info("No user detected");
+      }
+    });
+  }, []);
+
   if (user) {
     console.log(user.displayName.split(" ")[0]);
     name = user.displayName.split(" ")[0];
