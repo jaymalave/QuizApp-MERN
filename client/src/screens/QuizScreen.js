@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import SignOut from "../components/SIgnOut";
 
-export const QuizScreen = () => {
+export const QuizScreen = (props) => {
+
   const questions = [
     {
       questionText: "What is the capital of France?",
@@ -59,7 +60,7 @@ export const QuizScreen = () => {
   };
   return (
     <>
-      <h1 className="onboard-text">Hi Jay!</h1>
+      <h1 className="onboard-text">Hi {props.name}!</h1>
       <div className="app">
         {showScore ? (
           <div className="score-section">

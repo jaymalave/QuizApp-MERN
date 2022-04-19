@@ -54,6 +54,7 @@ body {
 .onboard-text {
   color: rgba(0, 0, 0, 0.75);
   text-align: center;
+  margin: 30px;
 }
 
 .question-text {

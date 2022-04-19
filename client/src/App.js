@@ -21,14 +21,18 @@ const auth = firebase.auth();
 
 export default function App() {
   const [user] = useAuthState(auth);
-  console.log(user);
-  // console.log(user.displayName.slice(' '));
+  var name;
+  // console.log(user);
+  if (user) {
+    console.log(user.displayName.split(" ")[0]);
+    name = user.displayName.split(" ")[0];
+  }
 
   return (
     <div>
       {user ? (
         <>
-          <QuizScreen />
+          <QuizScreen name={name} />
         </>
       ) : (
         <SignIn />
