@@ -1,4 +1,4 @@
-export default serviceAccountKey = {
+const serviceAccountKey = {
   type: "service_account",
   project_id: "quizapp-d0e54",
   private_key_id: "a08978c1e69e5d8fdf1a03e501084500255129c0",
@@ -12,3 +12,5 @@ export default serviceAccountKey = {
   client_x509_cert_url:
     "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-sj0vy%40quizapp-d0e54.iam.gserviceaccount.com",
 };
+
+export default serviceAccountKey;
