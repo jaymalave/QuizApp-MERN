@@ -89,7 +89,9 @@ export const QuizScreen = () => {
           </>
         )}
       </div>
-      <SignOut />
+      <div className="sign-out-holder">
+        <SignOut />
+      </div>
     </>
   );
 };
