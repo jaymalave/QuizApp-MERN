@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getQuestions } from "../api/getQuestions";
 import { updateScore } from "../api/updateScore";
 import SignOut from "../components/SIgnOut";
@@ -56,7 +56,7 @@ export const QuizScreen = (props) => {
 
   const handleScore = async (sc) => {
     const response = await updateScore(sc);
-    console.log(response);
+    console.log(response, "from backend");
   };
 
   const handleAnswerOptionClick = (isCorrect) => {
@@ -68,8 +68,9 @@ export const QuizScreen = (props) => {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setShowScore(true);
+      console.log(score);
       handleScore(score);
+      setShowScore(true);
     }
   };
   return (
