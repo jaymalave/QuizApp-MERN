@@ -41,6 +41,33 @@ export const QuizScreen = (props) => {
         { answerText: "7", isCorrect: true },
       ],
     },
+    {
+      questionText: "Who is the highest rated chess player in the world?",
+      answerOptions: [
+        { answerText: "Magnus Carlsen", isCorrect: true },
+        { answerText: "Fabiano Caruana", isCorrect: false },
+        { answerText: "Anish Giri", isCorrect: false },
+        { answerText: "Daniil Dubov", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "Who owns Starbucks in India?",
+      answerOptions: [
+        { answerText: "Reliance", isCorrect: false },
+        { answerText: "HCL", isCorrect: false },
+        { answerText: "Tata", isCorrect: true },
+        { answerText: "Adani Enterprises", isCorrect: false },
+      ],
+    },
+    {
+      questionText: "How many World cups have Australia won till date?",
+      answerOptions: [
+        { answerText: "4", isCorrect: false },
+        { answerText: "5", isCorrect: true },
+        { answerText: "3", isCorrect: false },
+        { answerText: "6", isCorrect: false },
+      ],
+    },
   ];
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -68,8 +95,8 @@ export const QuizScreen = (props) => {
     if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      console.log(score);
-      handleScore(score);
+      console.log(score + 1);
+      handleScore(score + 1);
       setShowScore(true);
     }
   };
@@ -108,8 +135,6 @@ export const QuizScreen = (props) => {
       <div className="sign-out-holder">
         <SignOut />
       </div>
-      <button onClick={() => handleQuestions()}>Get Questions</button>
-      <h1>{test}</h1>
     </>
   );
 };
