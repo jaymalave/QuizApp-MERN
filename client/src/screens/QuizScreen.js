@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { getQuestions } from "../api/getQuestions";
 import SignOut from "../components/SIgnOut";
 
 export const QuizScreen = (props) => {
-
   const questions = [
     {
       questionText: "What is the capital of France?",
@@ -45,6 +45,13 @@ export const QuizScreen = (props) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
+  const [test, setTest] = useState("");
+
+  const handleQuestions = async () => {
+    const response = await getQuestions();
+    console.log(response.message);
+    setTest(response.message);
+  };
 
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
@@ -93,6 +100,8 @@ export const QuizScreen = (props) => {
       <div className="sign-out-holder">
         <SignOut />
       </div>
+      <button onClick={() => handleQuestions()}>Get Questions</button>
+      <h1>{test}</h1>
     </>
   );
 };
