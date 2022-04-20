@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getQuestions } from "../api/getQuestions";
+import { updateScore } from "../api/updateScore";
 import SignOut from "../components/SIgnOut";
 
 export const QuizScreen = (props) => {
@@ -53,6 +54,11 @@ export const QuizScreen = (props) => {
     setTest(response.message);
   };
 
+  const handleScore = async (sc) => {
+    const response = await updateScore(sc);
+    console.log(response);
+  };
+
   const handleAnswerOptionClick = (isCorrect) => {
     if (isCorrect) {
       setScore(score + 1);
@@ -63,6 +69,7 @@ export const QuizScreen = (props) => {
       setCurrentQuestion(nextQuestion);
     } else {
       setShowScore(true);
+      handleScore(score);
     }
   };
   return (
