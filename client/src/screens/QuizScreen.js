@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { getLeaderboard } from "../api/getLeaderboard";
 import { getQuestions } from "../api/getQuestions";
 import { updateScore } from "../api/updateScore";
 import SignOut from "../components/SIgnOut";
 
 export const QuizScreen = (props) => {
+  useEffect(() => {
+    getLeaderboard().then((response) => {
+      console.log(response.topScorers[0].name);
+    });
+  });
+
   const questions = [
     {
       questionText: "What is the capital of France?",

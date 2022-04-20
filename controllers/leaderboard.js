@@ -1,3 +1,11 @@
+import User from "../models/User.js";
+
 export const getLeaderboard = async (req, res, json) => {
-  res.json({ message: "route to get the leaderboard" });
+  try {
+    const topScorers = await User.find().sort({ score: -1 }).limit(3);
+    res.json({ topScorers: topScorers });
+  } catch (error) {
+    res.json({ message: error });
+  }
+
 };
