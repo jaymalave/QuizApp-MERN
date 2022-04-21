@@ -14,7 +14,7 @@ body {
 body {
   background-color: aliceblue;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-height: 100vh;
 }
@@ -117,6 +117,35 @@ button {
 .sign-out-holder {
   display: flex;
   justify-content: center;
+}
+
+.vl {
+  height: 75vh;
+  width: 2px;
+  border-radius: 5px;
+  background-color: black;
+  margin: 5vw;
+}
+
+.lb-head {
+  color:#252d4a;
+  font-weight: bolder;
+  text-align: center;
+  margin: 5px;
+}
+
+.top-scorer {
+  text-align: center;
+  color: #252d4a;
+  font-size: 2rem;
+}
+
+.leaderboard {
+  width: 25vw;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 .correct {

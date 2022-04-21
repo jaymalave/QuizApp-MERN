@@ -5,6 +5,9 @@ import "firebase/compat/firestore";
 import { onAuthStateChanged } from "firebase/compat/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import SignIn from "./components/SignIn.js";
+import SignOut from "./components/SIgnOut";
+import { Leaderboard } from "./screens/Leaderboard";
+import { Divider } from "./components/Divider";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FirebaseAPIKey,
@@ -36,6 +39,7 @@ export default function App() {
         console.info("No user detected");
       }
     });
+    
   }, []);
 
   if (user) {
@@ -44,10 +48,14 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="">
       {user ? (
         <>
-          <QuizScreen name={name} />
+          <div className="d-flex justify-content-around align-items-center">
+            <QuizScreen name={name} />
+            <Divider />
+            <Leaderboard />
+          </div>
         </>
       ) : (
         <SignIn />
