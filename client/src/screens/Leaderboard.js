@@ -34,15 +34,21 @@ export const Leaderboard = () => {
       ) : (
         <div className="leaderboard">
           <h1 className="lb-head">Leaderboard</h1>
-          <h1 className="top-scorer">
-            🥇 {top1} {score1}
-          </h1>
-          <h1 className="top-scorer">
-            🥈 {top2} {score2}
-          </h1>
-          <h1 className="top-scorer">
-            🥉 {top3} {score3}
-          </h1>
+          <div className="top-scorer">
+            <div className="scorer-text">🥇</div>
+            <div className="scorer-text">{top1}</div>
+            <div className="scorer-text">{score1}</div>
+          </div>
+          <div className="top-scorer">
+            <div className="scorer-text">🥈</div>
+            <div className="scorer-text">{top2}</div>
+            <div className="scorer-text">{score2}</div>
+          </div>
+          <div className="top-scorer">
+            <div className="scorer-text">🥉</div>
+            <div className="scorer-text">{top3}</div>
+            <div className="scorer-text">{score3}</div>
+          </div>
         </div>
       )}
     </>

@@ -135,9 +135,15 @@ button {
 }
 
 .top-scorer {
+  display: flex;
+  justify-content: space-around;
   text-align: center;
   color: #252d4a;
   font-size: 2rem;
+}
+
+.scorer-text {
+  color: #252d4a;
 }
 
 .leaderboard {
