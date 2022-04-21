@@ -135,11 +135,17 @@ button {
 }
 
 .top-scorer {
+  width: 25vw;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   text-align: center;
-  color: #252d4a;
-  font-size: 2rem;
+  color: aliceblue;
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  margin: 25px;
+  padding: 10px;
+  box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
 }
 
 .scorer-text {
@@ -148,10 +154,11 @@ button {
 
 .leaderboard {
   width: 25vw;
-  height: 50vh;
+  height: 60vh;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  align-items: center;
 }
 
 .correct {
