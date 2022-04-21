@@ -39,7 +39,6 @@ export default function App() {
         console.info("No user detected");
       }
     });
-    
   }, []);
 
   if (user) {
