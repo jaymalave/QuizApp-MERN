@@ -143,8 +143,8 @@ export const QuizScreen = (props) => {
           )}
         </div>
         <div className="sign-out-holder">
-            <SignOut />
-          </div>
+          <SignOut />
+        </div>
       </div>
     </div>
   );

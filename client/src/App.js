@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { QuizScreen } from "./screens/QuizScreen";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
@@ -8,6 +8,7 @@ import SignIn from "./components/SignIn.js";
 import SignOut from "./components/SIgnOut";
 import { Leaderboard } from "./screens/Leaderboard";
 import { Divider } from "./components/Divider";
+import { Button } from "react-bootstrap";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FirebaseAPIKey,
@@ -24,6 +25,7 @@ const auth = firebase.auth();
 
 export default function App() {
   const [user] = useAuthState(auth);
+  const [refresh, setRefresh] = useState(false);
   var name;
   // console.log(user);
 
@@ -39,12 +41,17 @@ export default function App() {
         console.info("No user detected");
       }
     });
-  }, []);
+    console.log("refresh test");
+  }, [user, refresh]);
 
   if (user) {
     console.log(user.displayName.split(" ")[0]);
     name = user.displayName.split(" ")[0];
   }
+
+  const handleRefreshLeaderboard = () => {
+    setRefresh(true);
+  };
 
   return (
     <div className="">
@@ -53,7 +60,12 @@ export default function App() {
           <div className="d-flex justify-content-around align-items-center">
             <QuizScreen name={name} />
             <Divider />
-            <Leaderboard />
+            <div>
+              <Leaderboard />
+              <Button variant="dark" onClick={() => handleRefreshLeaderboard()}>
+                Refresh Leaderboard
+              </Button>
+            </div>
           </div>
         </>
       ) : (

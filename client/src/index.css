@@ -28,7 +28,7 @@ body {
   padding: 20px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 .score-section {
@@ -135,6 +135,7 @@ button {
 }
 
 .top-scorer {
+  cursor: pointer;
   width: 25vw;
   display: flex;
   justify-content: space-between;
@@ -144,7 +145,7 @@ button {
   background-color: aliceblue;
   margin: 25px;
   padding: 10px;
-  box-shadow: 10px 10px 15px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 15px -5px rgba(38, 51, 58, 0.75);
   border-radius: 10px;
 }
 
